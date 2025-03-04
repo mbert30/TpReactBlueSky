@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  /** Base colors */
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  /** Dark theme primary colors */
+  --dm-primary-a0: #7807a2;
+  --dm-primary-a10: #8931ad;
+  --dm-primary-a20: #994db7;
+  --dm-primary-a30: #a967c2;
+  --dm-primary-a40: #b880cc;
+  --dm-primary-a50: #c799d7;
+
+  /** Dark theme surface colors */
+  --dm-surface-a0: #242424;
+  --dm-surface-a10: #383838;
+  --dm-surface-a20: #4e4e4e;
+  --dm-surface-a30: #656565;
+  --dm-surface-a40: #7d7d7d;
+  --dm-surface-a50: #959595;
+
+  /** Dark theme tonal surface colors */
+  --dm-surface-tonal-a0: #4f2360;
+  --dm-surface-tonal-a10: #623a71;
+  --dm-surface-tonal-a20: #755081;
+  --dm-surface-tonal-a30: #886793;
+  --dm-surface-tonal-a40: #9b7fa4;
+  --dm-surface-tonal-a50: #af98b6;
+
+
+  /** Light theme primary colors */
+  --lm-primary-a0: #7807a2;
+  --lm-primary-a10: #7b229f;
+  --lm-primary-a20: #7d339b;
+  --lm-primary-a30: #7f4098;
+  --lm-primary-a40: #804c94;
+  --lm-primary-a50: #815790;
+
+  /** Light theme surface colors */
+  --lm-surface-a0: #ebebeb;
+  --lm-surface-a10: #dfdfdf;
+  --lm-surface-a20: #d2d2d2;
+  --lm-surface-a30: #c6c6c6;
+  --lm-surface-a40: #bababa;
+  --lm-surface-a50: #aeaeae;
+
+  /** Light theme tonal surface colors */
+  --lm-surface-tonal-a0: #e1d6e4;
+  --lm-surface-tonal-a10: #d6ccd8;
+  --lm-surface-tonal-a20: #cbc2cd;
+  --lm-surface-tonal-a30: #c0b8c2;
+  --lm-surface-tonal-a40: #b5afb6;
+  --lm-surface-tonal-a50: #aaa5ab;
+}

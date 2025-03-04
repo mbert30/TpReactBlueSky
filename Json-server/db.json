@@ -1,9 +1,25 @@
 {
   "users": [
     {
-      "email": "test@test.fr",
+      "email": "test",
       "password": "$2a$10$il2nF9Uh03u5F3cCVuYCNeZ1k6jHylcYGWQ39Ax0eIEK505B968xq",
+      "username": "David",
       "id": 1
+    },
+    {
+      "email": "test@test.fr",
+      "password": "$2a$10$pZZIW9f.Z8F.wODaI9dFXehprnUn1a6FPvfusDZ8v4GJ7SYsrZVSO",
+      "id": 2
+    }
+  ],
+  "tweet":[
+    {
+      "id": 1,
+      "body": "J'aime les patates",
+      "author_id": 1,
+      "createdAt": "2021-05-30T00:00:00Z",
+      "likes": 20,
+      "retweets": 20
     }
   ]
 }

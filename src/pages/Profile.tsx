@@ -1,4 +1,4 @@
-import AuthGuard from "../app/AuthGuard"
+import AuthGuard from "../app/authGuard"
 
 const Profile = () => {
   return (

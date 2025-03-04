@@ -1,6 +1,13 @@
+import { Fragment } from "react/jsx-runtime"
+import CardConnexion from "../domains/auth/components/CardConnexion"
+
 const Login = () => {
   return (
-    <h1>Login</h1>
+    <Fragment>
+      <div className="w-full h-full flex bg-(--dm-surface-a0)">
+        <CardConnexion />
+      </div>
+    </Fragment>
   )
 }
 
