@@ -1,14 +1,18 @@
-// import AuthGuard from "../app/authGuard"
-
+import { Fragment } from "react/jsx-runtime"
+import AuthGuard from "../app/authGuard"
 import TweetList from "../domains/tweets/components/TweetList"
+import Navbar from "../ui/NavBar"
 
 const Home = () => {
   return (
-    <div className="w-full h-full flex bg-(--dm-surface-a0) overflow-x-scroll overflow-y-auto">
-      <TweetList />
-    </div>
+    <Fragment>
+      <Navbar />
+      <div className="mt-15 min-w-full min-h-full flex bg-(--dm-surface-a0)">
+        <TweetList />
+      </div>
+    </Fragment>
 
   )
 }
 
-export default Home
+export default AuthGuard(Home)

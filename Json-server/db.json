@@ -9,17 +9,40 @@
     {
       "email": "test@test.fr",
       "password": "$2a$10$pZZIW9f.Z8F.wODaI9dFXehprnUn1a6FPvfusDZ8v4GJ7SYsrZVSO",
+      "username": "Bertrand",
       "id": 2
+    },
+    {
+      "email": "bertmatheo@gmail.com",
+      "password": "$2a$10$6p/ed5/szvhCcSnJPfe3k.XVHdzTNaU4A.M/wRq6.QW5JChe.BdBS",
+      "username": "Zymiak",
+      "id": 3
     }
   ],
-  "tweet":[
+  "tweet": [
     {
       "id": 1,
       "body": "J'aime les patates",
-      "author_id": 1,
+      "userId": 1,
       "createdAt": "2021-05-30T00:00:00Z",
       "likes": 20,
       "retweets": 20
+    },
+    {
+      "body": "Nouveau tweet",
+      "userId": 3,
+      "createdAt": "2025-03-06T13:14:42.342Z",
+      "likes": 0,
+      "retweets": 0,
+      "id": 3
+    },
+    {
+      "body": "oui",
+      "userId": 3,
+      "createdAt": "2025-03-06T13:50:11.329Z",
+      "likes": 0,
+      "retweets": 0,
+      "id": 4
     }
   ]
 }

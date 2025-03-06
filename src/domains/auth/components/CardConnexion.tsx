@@ -4,19 +4,23 @@ import { useEffect, useState } from "react"
 import { fetchUser } from "../authSlice"
 import { verifInfoConnexion } from "../service"
 import { useAppDispatch, useAppSelector } from "../../../app/store"
-import { useNavigate } from "react-router"
+import { Link, useNavigate } from "react-router"
+import { toast } from "react-toastify"
+import { messageErreur } from "../../../app/toastStyle"
 
 const CardConnexion = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
   const infoConn = useAppSelector((state: { auth: {token: string, isLogged: boolean}}) => state.auth)
 
   const formSubmitLogin = async (e: any) => {
     e.preventDefault()
     if(verifInfoConnexion(email, password)) {
       dispatch(fetchUser({email, password}))
+    } else {
+      toast.error('Erreur : Les informations sont incorrect', messageErreur);
     }
   }
   useEffect(() => {
@@ -37,6 +41,7 @@ const CardConnexion = () => {
         <input className="mb-5 bg-(--dm-surface-a10) border border-(--dm-surface-a30) text-inherit" type='password' value={password} onChange={(valeur: any) => setPassword(valeur.target.value)} />
 
         <ButtonPrincipal valueButton='Valider' />
+        <p> Pas de compte ? <Link to="/signup"><span className="text-(--clr-link-a0)"> Inscrivez-vous ici</span></Link></p>
       </form>
     </Fragment>
   )

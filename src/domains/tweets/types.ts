@@ -1,8 +1,11 @@
+import { User } from "../auth/types";
+
 export type Tweet = {
-  id: number;
+  id?: number;
   body: string;
-  author_id: number;
+  userId: number;
   createdAt: Date;
   likes: number;
   retweets: number;
+  user?: User
 };
