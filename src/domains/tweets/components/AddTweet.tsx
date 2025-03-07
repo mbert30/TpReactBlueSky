@@ -1,5 +1,4 @@
 import { useState } from "react"
-import ButtonPrincipal from "../../../ui/ButtonPrincipal"
 import { useAppDispatch, useAppSelector } from "../../../app/store"
 import { addTweet } from "../tweetSlice"
 
@@ -13,13 +12,25 @@ const AddTweet = ({reloadFeed} : {reloadFeed: () => void}) => {
     reloadFeed()
   }
   return (
-    <div className="px-20 py-5 flex flex-col border border-(--dm-surface-a30) bg-(--dm-surface-a10) justify-center content-center">
-      <h2 className="mb-5 text-(--clr-light-a0)">Ecrire un nouveau post</h2>
-      <form className="flex flex-col" onSubmit={submitNewTweet}>
-        <textarea className="mb-5 text-(--clr-light-a0) bg-(--dm-surface-a20)" value={newTweet} onChange={(valeur: any) => setNewTweet(valeur.target.value)}></textarea>
-        <ButtonPrincipal />
+    <div className="px-5 py-3 flex flex-col border border-(--dm-surface-a30) bg-(--dm-surface-a10) rounded-lg w-full max-w-2xl mx-auto">
+      <form className="flex flex-col space-y-3" onSubmit={submitNewTweet}>
+        <div className="flex items-start space-x-3">
+          <img src='/user.png' alt="Avatar" className="w-10 h-10 rounded-full" />
+          <textarea 
+          className="flex-1 bg-transparent text-(--clr-light-a0) outline-none text-lg resize-none"
+          placeholder="Que se passe-t-il ?!"
+          value={newTweet} 
+          onChange={(e) => setNewTweet(e.target.value)}
+          ></textarea>
+        </div>
+        <div className="flex justify-end items-center text-blue-500">
+          <button 
+            type="submit" 
+            className="px-4 py-2 bg-gray-500 text-white rounded-full" 
+            disabled={!newTweet.trim()}>Envoyer
+          </button>
+        </div>
       </form>
-
     </div>
   )
 }

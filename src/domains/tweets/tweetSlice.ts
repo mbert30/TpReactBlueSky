@@ -3,9 +3,9 @@ import { Tweet } from './types'
 import { getFeed, getFeedProfile, addTweet as addTweetApi, editTweet as editTweetApi, deleteTweet as deleteTweetApi} from './api'
 import { WritableDraft } from 'immer'
 import { toast } from 'react-toastify'
-import { messageErreur, messageValidation } from '../../app/toastStyle'
+import { messageErreur } from '../../app/toastStyle'
 
-export const loadFeed = createAsyncThunk('tweets/loadFeed', async (typeTri:  'ByPopularity' | 'ByDate') => {
+export const loadFeed = createAsyncThunk('tweets/loadFeed', async (typeTri:  'ByPopularity' | 'ByDate' | 'ByFollow') => {
   const response = await getFeed(typeTri)
   return response.data
 })
@@ -52,9 +52,13 @@ const tweetSlice = createSlice({
     builder
       .addCase(loadFeed.fulfilled, (state, action) => {
         state.splice(0, state.length)
-        action.payload.forEach((e: WritableDraft<Tweet>) => {
-          state.push(e)
-        })
+        if(action.payload === undefined) {
+          toast.error('Erreur : Requête loadFeed refuser', messageErreur);
+        } else {
+          action.payload.forEach((e: WritableDraft<Tweet>) => {
+            state.push(e)
+          })
+        }
       })
       .addCase(loadFeed.rejected, () => {
         toast.error('Erreur : Requête loadFeed refuser', messageErreur);

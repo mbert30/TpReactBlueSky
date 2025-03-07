@@ -1,48 +1,149 @@
 {
   "users": [
     {
-      "email": "test",
-      "password": "$2a$10$il2nF9Uh03u5F3cCVuYCNeZ1k6jHylcYGWQ39Ax0eIEK505B968xq",
+      "email": "david@gmail.com",
+      "password": "$2a$10$00ovKCnVXVR5zAc5UkrYZOch5R/cRTFwn9qBlKWBYgMmGS2J31Rl.",
       "username": "David",
+      "following": [
+        2,
+        3
+      ],
+      "followers": [],
       "id": 1
     },
     {
-      "email": "test@test.fr",
-      "password": "$2a$10$pZZIW9f.Z8F.wODaI9dFXehprnUn1a6FPvfusDZ8v4GJ7SYsrZVSO",
+      "email": "bertrand@gmail.com",
+      "password": "$2a$10$dwk10eV4QrYaptzwQJzW.u/kWELZwHfeDrdmsPoqObJBxsPb5Gt4q",
       "username": "Bertrand",
+      "following": [],
+      "followers": [
+        1
+      ],
       "id": 2
     },
     {
-      "email": "bertmatheo@gmail.com",
-      "password": "$2a$10$6p/ed5/szvhCcSnJPfe3k.XVHdzTNaU4A.M/wRq6.QW5JChe.BdBS",
-      "username": "Zymiak",
+      "email": "bernard@gmail.com",
+      "password": "$2a$10$XeI8niSWgNemBHTrBAZBdeRW2u5ZL2BiR9UMLNM2IiatOmH8JNeyS",
+      "username": "Bernard",
+      "following": [],
+      "followers": [
+        1
+      ],
       "id": 3
+    },
+    {
+      "email": "bertmatheo@gmail.com",
+      "password": "$2a$10$rEu6rqpqFGc4TiExjN6oRubNVUzGRgbUkcI25ZhRjpQ8HUqpNe.cm",
+      "username": "Matheo",
+      "following": [],
+      "followers": [],
+      "id": 4
+    },
+    {
+      "email": "Henri@gmail.com",
+      "password": "$2a$10$8eO9o1ymsvbvP75dCv6yeuYXezPmbHBZwYEN4cDp59TXt8MLe4MpG",
+      "username": "Henri",
+      "following": [],
+      "followers": [],
+      "id": 5
     }
   ],
   "tweet": [
     {
-      "id": 1,
-      "body": "J'aime les patates",
-      "userId": 1,
-      "createdAt": "2021-05-30T00:00:00Z",
-      "likes": 20,
-      "retweets": 20
-    },
-    {
-      "body": "Nouveau tweet",
-      "userId": 3,
-      "createdAt": "2025-03-06T13:14:42.342Z",
-      "likes": 0,
-      "retweets": 0,
-      "id": 3
-    },
-    {
-      "body": "oui",
-      "userId": 3,
-      "createdAt": "2025-03-06T13:50:11.329Z",
-      "likes": 0,
-      "retweets": 0,
+      "body": "Le café du matin, c'est la vie ☕",
+      "userId": 2,
+      "createdAt": "2025-03-07T08:45:12.000Z",
+      "likes": 12,
+      "retweets": 4,
       "id": 4
+    },
+    {
+      "body": "Quelqu'un a vu le dernier film Marvel ? 🎬",
+      "userId": 3,
+      "createdAt": "2025-03-06T20:30:45.000Z",
+      "likes": 9,
+      "retweets": 3,
+      "id": 5
+    },
+    {
+      "body": "React avec TypeScript, c'est vraiment top 🔥",
+      "userId": 4,
+      "createdAt": "2025-03-05T14:22:10.000Z",
+      "likes": 7,
+      "retweets": 2,
+      "id": 6
+    },
+    {
+      "body": "Un bon livre et un plaid, y'a rien de mieux 📚",
+      "userId": 1,
+      "createdAt": "2025-03-04T18:50:00.000Z",
+      "likes": 14,
+      "retweets": 5,
+      "id": 7
+    },
+    {
+      "body": "Je viens de finir mon projet en Python 🐍",
+      "userId": 2,
+      "createdAt": "2025-03-03T16:10:30.000Z",
+      "likes": 10,
+      "retweets": 1,
+      "id": 8
+    },
+    {
+      "body": "Besoin de recommandations de séries Netflix 🎥",
+      "userId": 3,
+      "createdAt": "2025-03-02T22:05:20.000Z",
+      "likes": 6,
+      "retweets": 2,
+      "id": 9
+    },
+    {
+      "body": "Linux > Windows, change my mind 🐧",
+      "userId": 4,
+      "createdAt": "2025-03-01T10:45:00.000Z",
+      "likes": 20,
+      "retweets": 8,
+      "id": 10
+    },
+    {
+      "body": "J'apprends Redux Toolkit, c'est puissant ! 💡",
+      "userId": 1,
+      "createdAt": "2025-02-28T09:30:15.000Z",
+      "likes": 8,
+      "retweets": 3,
+      "id": 11
+    },
+    {
+      "body": "Quel est votre langage de programmation préféré ? 🤔",
+      "userId": 2,
+      "createdAt": "2025-02-27T11:50:40.000Z",
+      "likes": 13,
+      "retweets": 6,
+      "id": 12
+    },
+    {
+      "body": "Je me lance dans Next.js ! Des conseils ?",
+      "userId": 3,
+      "createdAt": "2025-02-26T15:20:25.000Z",
+      "likes": 9,
+      "retweets": 3,
+      "id": 13
+    },
+    {
+      "body": "Quel est votre OS préféré ?",
+      "userId": 4,
+      "createdAt": "2025-02-25T18:00:00.000Z",
+      "likes": 11,
+      "retweets": 4,
+      "id": 14
+    },
+    {
+      "body": "Test",
+      "userId": 5,
+      "createdAt": "2025-03-07T11:40:12.661Z",
+      "likes": 0,
+      "retweets": 0,
+      "id": 15
     }
   ]
 }

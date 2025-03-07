@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { formatDistanceToNow } from "date-fns";
-import ShowTweet from './showTweet'
+import ShowTweet from './ShowTweet'
 import { useNavigate } from "react-router";
 
 const TweetCard = ({id, userId, username, body, createdAt, likes, retweets, reloadFeed} : {id: number, userId: number, username: string, body: string, createdAt : Date, likes: number, retweets: number, reloadFeed: () => void}) => {
@@ -25,17 +25,16 @@ const TweetCard = ({id, userId, username, body, createdAt, likes, retweets, relo
       <div key={id} className="flex gap-3 mb-4 border-b p-5 last:border-none bg-(--dm-surface-a10) cursor-pointer">
         <img src="/user.png" alt={'user_'+username} className="rounded-full w-10 h-10"/>
         <div>
-        <div className="flex items-center gap-2">
-          <span className="font-semibold" onClick={handleUsernameClick}>{username}</span>
-        </div>
-        <p className="text-(--clr-light-a0) text-xl mt-1" onClick={handleCardClick}>{body}</p>
-        <span className="text-gray-400 text-xs">
-          {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
-        </span>
-        <div className="flex items-center gap-4 mt-2">
-          <span className="text-gray-500 text-sm mr-5">Likes: {likes}</span>
-          <span className="text-gray-500 text-sm">Retweets: {retweets}</span>
-        </div>
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-(--clr-light-a0)" onClick={handleUsernameClick}>{username}</span>
+          </div>
+          <p className="text-(--clr-light-a0) text-xl mt-1" onClick={handleCardClick}>{body}</p>
+          <span className="text-gray-400 text-xs">
+            {formatDistanceToNow(new Date(createdAt), { addSuffix: true })}
+          </span>
+          <div className="flex items-center gap-4 mt-2">
+            <span className="text-(--clr-light-a0) text-sm mr-5">Likes: {likes}</span>
+          </div>
         </div>
       </div>
       ) : (

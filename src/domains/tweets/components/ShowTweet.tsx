@@ -3,8 +3,9 @@ import { useAppDispatch, useAppSelector } from '../../../app/store';
 import { toast } from 'react-toastify';
 import { messageErreur } from '../../../app/toastStyle';
 import { deleteTweet, editTweet } from '../tweetSlice';
+import { formatDistanceToNow } from 'date-fns';
 
-const ShowTweet = ({ id, userId, username, body, createdAt, likes, retweets, onClose, reloadFeed }: { id: number, userId: number, username: string, body: string, createdAt: Date, likes: number, retweets: number, onClose: () => void, reloadFeed: () => void}) => {
+const ShowTweet = ({ id, userId, username, body, createdAt, likes, onClose, reloadFeed }: { id: number, userId: number, username: string, body: string, createdAt: Date, likes: number, retweets: number, onClose: () => void, reloadFeed: () => void}) => {
   const dispatch = useAppDispatch()
   const [isEditing, setIsEditing] = useState(false);
   const [editedContent, setEditedContent] = useState(body);
@@ -56,7 +57,7 @@ const ShowTweet = ({ id, userId, username, body, createdAt, likes, retweets, onC
           </div>
           <div>
           <h2 className="text-lg font-bold">{username}</h2>
-          <p className="text-gray-500 text-sm">{createdAt.toLocaleString()}</p>
+          <p className="text-gray-500 text-sm">{formatDistanceToNow(new Date(createdAt), { addSuffix: true })}</p>
           </div>
         </div>
         <p className="mt-4">{body}</p>

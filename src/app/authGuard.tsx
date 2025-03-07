@@ -15,7 +15,9 @@ const AuthGuard = (WrappedComponent : any) => {
 
       }
     }, [])
-    return <WrappedComponent {...props} />
+    if (infoConn.isLogged) {
+      return <WrappedComponent {...props} />
+    }
   }
 
   return (

@@ -9,20 +9,34 @@ const instance = axios.create({
 const getFeedByPopularity = async () => {
   const threeDaysAgo = new Date();
   threeDaysAgo.setDate(threeDaysAgo.getDate() - 3);
-  return await instance.get(`tweet?_expand=user&_sort=likes&_order=desc&createdAt_gte=${threeDaysAgo.toISOString()}`);
+  const res = await instance.get(`tweet?_expand=user&_sort=likes&_order=desc&createdAt_gte=${threeDaysAgo.toISOString()}`);
+  return res;
 }
 
 const getFeedByDate = async () => {
   return await instance.get('tweet?_expand=user&_sort=createdAt&_order=desc');
 }
 
-export const getFeed = async (typeTri: 'ByPopularity' | 'ByDate'): Promise<any> => {
+const getFeedByFollow = async () => {
+  const res = await instance.get('tweet?_expand=user&_sort=createdAt&_order=desc')
+  const currentUser = Number(sessionStorage.getItem('id'));
+  const userRes = await instance.get(`users/${currentUser}`);
+  const following = userRes.data.following
+  const filteredTweets = res.data.filter((tweet: any) => {
+    return following.includes(tweet.user.id)
+  });
+  return { data: filteredTweets };
+}
+
+export const getFeed = async (typeTri: 'ByPopularity' | 'ByDate' | 'ByFollow'): Promise<any> => {
   try {
     switch (typeTri) {
       case 'ByPopularity':
         return await getFeedByPopularity()
       case 'ByDate':
         return await getFeedByDate()
+      case 'ByFollow':
+        return await getFeedByFollow()
     }
   } catch (error: any) {
     toast.error('Erreur : La requête a échoué', messageErreur);

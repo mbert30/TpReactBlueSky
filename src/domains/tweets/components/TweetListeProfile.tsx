@@ -19,14 +19,12 @@ const TweetListeProfile = ({ userId } : {userId: number}) => {
 
   return (
     <Fragment>
-      <div className='mx-auto flex flex-col'>
-        <div className='mt-5'>
-          {
-            (tweets.length === 0)
-              ? '' //TODO: Ajouter un spinner pour l'attente du chargement
-              : tweets.map((t: Tweet) => t.user && t.id !== undefined ? <TweetCard key={t.id} id={t.id} userId={t.userId} username={t.user.username} body={t.body} createdAt={t.createdAt} likes={t.likes} retweets={t.retweets} reloadFeed={reloadFeed} /> : null)
-          }
-        </div>
+      <div className='mt-5 mx-1'>
+        {
+          (tweets.length === 0)
+            ? <div className='mt-5 mx-auto flex'> <p className='mx-auto text-(--clr-light-a0) '>Aucun tweet pour l'instant</p></div>
+            : tweets.map((t: Tweet) => t.user && t.id !== undefined ? <TweetCard key={t.id} id={t.id} userId={t.userId} username={t.user.username} body={t.body} createdAt={t.createdAt} likes={t.likes} retweets={t.retweets} reloadFeed={reloadFeed} /> : null)
+        }
       </div>
     </Fragment>
   )

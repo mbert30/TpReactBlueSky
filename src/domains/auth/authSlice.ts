@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { Auth } from './types';
-import { login, register, getUserById as getUserByIdApi } from './api';
+import { login, register, getUserById as getUserByIdApi, followUser as followUserApi } from './api';
 
 export const fetchUser = createAsyncThunk('auth/fetchUser', async ({email, password }: { email: string, password: string }) => {
   const response = await login(email, password)
+  console.log(response)
   return response.data
 })
 
@@ -15,6 +16,10 @@ export const addUser = createAsyncThunk('auth/addUser', async ({email, password,
 export const getUserById = createAsyncThunk('auth/getUserById', async (id: number) => {
   const response = await getUserByIdApi(id)
   return response.data
+})
+
+export const followUser = createAsyncThunk('auth/followUser', async ({idFollowing, idFollower} : {idFollowing: number, idFollower: number}) => {
+  return await followUserApi(idFollowing, idFollower) 
 })
 
 const authSlice = createSlice({
@@ -69,8 +74,14 @@ const authSlice = createSlice({
       .addCase(getUserById.fulfilled, (action) => {
         return action
       })
-      .addCase(getUserById.rejected, (state) => {
-        state.isLogged = false
+      .addCase(getUserById.rejected, () => {
+
+      })
+      .addCase(followUser.fulfilled, (action) => {
+        return action
+      })
+      .addCase(followUser.rejected, () => {
+
       })
   }
 })
